@@ -1,0 +1,926 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Muncul2 an :) */
+
+@keyframes dropDrop{
+    from{
+        transform: scaleY(0);
+        
+    }
+    to{
+        transform: scaleY(1);
+    }
+}
+
+@keyframes dropWrap{
+    to{
+        transform: scaleY(0);
+        
+    }
+    from{
+        transform: scaleY(1);
+    }
+}
+
+@keyframes poof{
+    from {
+        margin-top: 80px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes poofProj{
+    from{
+        opacity: 0;
+        padding-bottom: 80px;
+    }
+    to{
+        opacity: 1;
+        margin-top: -3.8vw;
+        padding-bottom: 0px;
+    }
+}
+
+@keyframes dragLeftEnter{
+    from {
+        opacity: 0;
+        margin-left: 400px;
+    }
+    to {
+        opacity: 1;
+        margin-left: 0px;
+    }
+}
+
+@keyframes dragLeftLeave{
+    from {
+        opacity: 1;
+        margin-left: 0px;
+    }
+    to {
+        opacity: 0;
+        margin-left: 400px;
+    }
+}
+
+@keyframes backAppear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes backGone{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+    
+}
+
+body {
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0px auto 0px auto;
+    font-family: ubuntu;
+    overflow-x: hidden;
+}
+    body::-webkit-scrollbar{
+        width: 0px;
+    }
+
+#backbutton{
+    opacity: 0;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+
+    bottom: 0;
+    right: 0;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    background-color: #0000001e;
+    background-image: url("Assets/Back-to-Top.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    z-index: 3;
+}
+
+#navbar{
+    margin-bottom: 0px;
+    background-color: #3D3D3D;
+    width: 100%;
+    height: 78px;
+}
+
+    #navbar #navcon{
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+        #navbar ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            
+        }
+            #navbar ul > li{
+                margin-right: 40px;
+                transition: 0.2s;
+                transition-duration: 500ms;
+                padding: 25px 25px;
+
+            }
+
+            #navbar ul > li:nth-child(3){
+                width: 100%;
+                word-wrap: unset;
+
+            }
+
+            #navbar ul > li:hover:nth-child(-n+3){
+                transition-duration: 500ms;
+                cursor: pointer;
+                background-color: rgb(100, 100, 100);
+            }
+
+            #navbar ul > #hidDrop{
+                visibility: hidden;
+            }
+
+                #navbar ul #hidDrop #ham{
+                    color: rgb(105, 105, 105);
+                }
+
+                #navbar ul > #hidDrop #hidDropCon{
+                    display: none;
+                    height: 0%;
+                    font-size: 18px;
+                    background-color: #333333;
+                    position: absolute;
+                    z-index: 1;
+                    width: 100%;
+                    height: auto;
+                    overflow: hidden;
+                    transform-origin: bottom;
+                    animation: dropWrap 200ms linear;
+                    animation-fill-mode: forwards;
+                    
+                }
+
+                #navbar ul > #hidDrop:hover{
+                    cursor: pointer;
+                }
+
+                #navbar ul > #hidDrop:hover #hidDropCon{
+                    display: block;
+                    height: auto;
+                    width: 220px;
+                    flex-direction: column;
+                    font-size: 18px;
+                    cursor: pointer;
+                    z-index: 1;
+                    animation: dropDrop 200ms linear;
+                    animation-fill-mode: forwards;
+                    transform-origin: top;
+                    /* transition: max-height 500ms ease-out; */
+                }
+                    #navbar ul > #hidDrop:hover #hidDropCon p{
+                        width: 100%;
+                        height: 100%;
+                        
+                        padding: 20px 20px;
+                        transition-duration: 500ms;
+                    }
+
+                    #navbar ul > #hidDrop:hover #hidDropCon p:hover{
+                        transition-duration: 500ms;
+                        background-color: rgb(99, 99, 99);
+                    }
+
+#frontpage{
+    background-image: url("Assets/Front-Background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+    justify-content: center;
+}
+    #frontpage #frontpage-inside{
+        align-items: center;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+        #frontpage #frontpage-inside #welcome{
+            font-size: 50px;
+            font-weight: bold;
+            color: #FFF500;
+            margin-top: -80px;
+        }
+
+        #frontpage #frontpage-inside #motto{
+            font-size: 30px;
+            font-weight: bold;
+            font-style: italic;
+            color: #FFF500;
+            margin-top: 40px;
+        }
+
+        #frontpage #frontpage-inside #buttonA button{
+            margin-top: 40px;
+            height: 50px;
+            width: 150px;
+            background-color: #000e52;
+            border: none;
+
+            font-size: 20px;
+            font-family: Ubuntu;
+            border-radius: 32px;
+            color: #FFFFFF;
+            font-weight: bold;
+            transition: 0.25s linear;
+            outline: none;
+        }
+
+        #frontpage #frontpage-inside #buttonA button:hover{
+            margin-top: 40px;
+            height: 50px;
+            width: 200px;
+            background-color: #000e52;
+            border: none;
+
+            font-size: 20px;
+            font-family: Ubuntu;
+            border-radius: 32px;
+            color: #FFFFFF;
+            font-weight: bold;
+            transition: 0.25s linear;
+            background-image: none;
+
+            cursor: pointer;
+            
+        }
+
+        #frontpage #frontpage-inside #buttonA button:focus{
+            margin-top: 40px;
+            height: 50px;
+            width: 150px;
+            background-color: #000e52;
+            border: none;
+
+            font-size: 20px;
+            font-family: Ubuntu;
+            border-radius: 32px;
+            color: #FFFFFF;
+            font-weight: bold;
+            transition: 0.25s linear;
+            outline: none;
+            
+            
+        }
+
+
+        
+/* About Me */
+#about-me{
+    opacity: 0;
+    margin-top: 0px;
+    width: 100%;
+    height: auto;
+    background-image: url("Assets/About-Me-Background.svg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column; 
+    
+    animation-fill-mode: forwards;
+}
+
+    #about-me #about-me-inside{
+        padding-left: 15vw;
+        padding-right: 15vw;
+    }
+
+        #about-me #about-me-inside h1{
+            position: relative;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 5vw;
+        }
+
+        #about-me #about-me-inside #photo-id{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+            #about-me #about-me-inside #photo-id #photo-id-img{
+                perspective: 1000px;
+                position: relative;
+                transform-style: preserve-3d;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+                #about-me #about-me-inside #photo-id #photo-id-img #img-front{
+                    width: 300px;
+                    height: 300px;
+                    margin-right: 50px;
+                    box-shadow: 10px;
+                    transition-duration: 1s;
+                    backface-visibility: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                }
+
+                #img-front, #img-back{
+               
+                    backface-visibility: hidden;
+                }
+
+                #img-front:hover{
+                    transform: rotateY(0deg);
+                }
+
+                #img-back{
+                    transform: rotateY(180deg);
+                }
+
+                #about-me #about-me-inside #photo-id #photo-id-img{
+                    transform: rotateY(0deg);
+                    
+                    transition-duration: 1s;
+                }
+
+            #about-me #about-me-inside #photo-id #photo-id-des{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+
+                #about-me #about-me-inside #photo-id #photo-id-des #photo-id-des-inside{
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+
+    #about-me #edu{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        font-size: 20px;
+        margin-bottom: 25px;
+        
+    }
+        #about-me #edu table#edu-table{
+            border-spacing: 20px;
+        }
+
+/* Expertise */
+#expertise{
+    opacity: 0;
+    background-image: url("Assets/BackgroundExp.svg");
+    background-color: #001689;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+}
+    #expertise #inside{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        margin-bottom: auto;
+        width: 100%;
+        height: auto;
+    }
+        #expertise #inside h1{
+            font-size: 5vw;
+            margin-bottom: 2px;
+        }
+
+        #expertise #inside h3{
+            font-size: 2vw;
+            margin-bottom: 5.5vh;
+        }
+        
+        #expertise #inside #allBox{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            justify-content: space-evenly;
+            margin-bottom: 100px;
+        }
+
+        #expertise #inside #allBox #ebox img{
+            width: 12vw;
+            height: 12vw;
+        }
+
+        #expertise #inside #allBox #ebox p{
+            font-size: 2vw;
+            font-weight: bold;  
+        }
+
+#projects{
+    opacity: 0;
+    background-image: url("Assets/ProjectBackground.svg");
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    #projects h1{
+        color: white;
+        padding-top: 100px;
+        text-align: center;
+        font-size: 5vw;
+        font-weight: bold;
+    }
+
+    #projects #projects-cont{
+        display: flex;
+        flex-direction: column;
+        
+        width: 100%;
+        height: auto;
+        padding-top: 100px;
+
+        text-align: center;
+        font-size: 3vh;
+        font-weight: bold;
+        color: white;
+
+    }
+
+        #projects #projects-cont #projects-cont-in1{
+
+            margin-bottom: 100px;
+        }
+
+        #projects #projects-cont #projects-cont-in1 #Pic1Project{
+            width: 50vw;
+            height: 50vw;
+            
+        }
+        
+        #projects #projects-cont #projects-cont-in1 #proj1{
+            width: 100%;
+            animation: dragLeftLeave 1s forwards;
+            
+        }
+
+        #projects #projects-cont #projects-cont-in1 #Pic1Project:hover{
+            opacity: 50%;
+            transition-duration: 1s linear;
+        }
+
+        #projects #projects-cont #projects-cont-in1 #Pic1Project:hover + #proj1{
+            visibility: visible;
+            animation: dragLeftEnter 1s forwards;
+        }
+        /* INI TEMPAT 2 */
+
+        #projects #projects-cont #projects-cont-in2{
+
+            margin-bottom: 100px;
+        }
+
+        #projects #projects-cont #projects-cont-in2 #Pic2Project{
+            width: 69vw;
+            height: 50vw;
+            background-color: black;
+            
+        }
+        #projects #projects-cont #projects-cont-in2 #proj2{
+            width: 100%;
+            animation: dragLeftLeave 1s forwards;
+        }
+
+        #projects #projects-cont #projects-cont-in2 #Pic2Project:hover{
+            opacity: 50%;
+            transition-duration: 1s linear;
+        }
+
+        #projects #projects-cont #projects-cont-in2 #Pic2Project:hover + #proj2{
+            visibility: visible;
+            animation: dragLeftEnter 1s forwards;
+        }
+
+#contact-me{
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: rgb(104, 62, 62);
+    font-family: Ubuntu !important;
+}
+    #contact-me #contact-me-cont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-image: url("Assets/Contact-Me-Background.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+        #contact-me #contact-me-cont h1{
+            color: black;
+            padding-top: 100px;
+            text-align: center;
+            font-size: 5vw;
+            font-weight: bold;
+        }
+
+        #contact-me #contact-me-cont form{
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            align-content: center;
+
+            background-color: #BBBBBB;
+            width: 45vw;
+            padding-top: 50px;
+            margin-bottom: 150px;
+            
+            height: auto;
+        }
+
+            #contact-me #contact-me-cont form figure:nth-child(4){
+                width: 60%;
+                height: auto;
+                align-content: center;
+                align-items: center;
+            }
+
+            #contact-me #contact-me-cont form #fill-name{
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            #contact-me #contact-me-cont form #fill-email{
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 30px;
+            }
+
+            #contact-me #contact-me-cont form #fill-linkedin{
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 30px;
+            }
+
+            #contact-me #contact-me-cont form #fill-comment{
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 30px;
+            }
+
+                #contact-me #contact-me-cont form #blanks{
+                    width: 80%;
+                    height: 80%;
+
+                    font-size: 30px;
+                    font-family: Ubuntu;
+                    background-color: transparent;
+
+                    border: none;
+                    outline: none;
+
+                    border-bottom: 2px solid black;
+                    
+                    margin-bottom: 20px;
+                }
+
+                #contact-me #contact-me-cont form #blanks:invalid{
+                    color: rgb(211, 0, 0);
+                    transition: 0.2s;
+                }
+
+                #contact-me #contact-me-cont form #blanks:valid{
+                    color: black;
+                    transition: 0.2s;
+                }
+
+                #contact-me #contact-me-cont form textarea{
+                    width: 80%;
+                    height: 80%;
+                    display: flex;
+                    justify-content: space-around;
+
+                    font-size: 23px;
+                    font-family: Ubuntu;
+                    background-color: rgb(151, 151, 151);
+
+                    outline: none;
+
+                    border: 2px solid black;
+                    margin-bottom: 20px;
+                }
+
+                #contact-me #contact-me-cont form textarea:invalid{
+                    color: rgb(211, 0, 0);
+                    transition: 0.2s;
+                }
+                
+                #contact-me #contact-me-cont form textarea:valid{
+                    color: black;
+                    transition: 0.2s;
+                }
+
+                #contact-me #contact-me-cont form #submits{
+                    margin-top: 20px;
+                }
+
+                #contact-me #contact-me-cont form #submits #SubButton{
+                    width: 200px;
+                    height: 70px;
+
+                    outline: none;
+                    background-color: black;
+                    border: none;
+                    color: white;
+                    font-family: Ubuntu;
+                    font-weight: bold;
+                    font-size: 30px;
+
+                    margin-bottom: 30px;
+                }
+
+                #contact-me #contact-me-cont form #submits #SubButton:hover{
+                    cursor: pointer;
+                    background-color: #001689;
+                    transition-duration: 0.2s;  
+                }
+
+#footer{
+    width: 100%;
+    height: auto;
+    overflow-y: hidden;
+    background-color: #3D3D3D;
+}
+    #footer #footer-cont{
+        position: relative;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        background-color: #3D3D3D;
+    }
+        #footer #footer-cont #left{
+            display: flex;
+            top: 0;
+            bottom: 0;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 494px;
+        }
+            #footer #footer-cont #left #left-img{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                width: 160px;
+                height: 160px;
+                width: 100%;
+            }
+            
+        #footer #footer-cont #right{
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+            #footer #footer-cont #right #allLinks{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+            }
+
+                #footer #footer-cont #right h3{
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: white;
+                }
+
+                #footer #footer-cont #right #allLinks #list{
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    height: auto;
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: white;
+                    margin-bottom: 20px;
+                    
+                }
+                    #footer #footer-cont #right #allLinks #list img{
+                        width: 60px;
+                        height: 60px;
+                        margin-right: 20px;
+                    }
+
+/* BUAT MOBILE BAMBANGS */
+@media only screen and (max-width: 839px){
+
+    #navbar{
+        background-color: #000000;
+        width: 100%;
+        height: 80px;
+    }
+
+    #navbar #navcon {
+        display: flex;
+        justify-content: center;
+    }
+
+    #navbar #navcon img{
+        display: none;
+    }
+
+    #navbar #navcon ul > li:nth-child(-n+3){
+        display: none;
+    }
+
+    #navbar #navcon ul > #hidDrop{
+        display: visible !important;
+        visibility: visible;
+    }
+
+    #navbar ul > #hidDrop #hidDropCon{
+        display: visible;
+        font-size: 18px;
+        background-color: #333333;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        transition-duration: 0.5s;
+    }
+
+    #about-me #about-me-inside h1{
+        text-align: center;
+        padding: 0px;
+    }
+
+    #about-me #about-me-inside #photo-id{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+        text-align: center;
+    }
+
+    #about-me #about-me-inside #photo-id{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #about-me #about-me-inside #photo-id #photo-id-img{
+        width: 300px;
+        height: 300px;
+        box-shadow: 10px;
+        margin-right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #expertise #inside #allBox {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #expertise #inside #allBox #ebox:nth-child(-n+2){
+        margin-bottom: 60px;
+    }
+
+    #expertise #inside #allBox #ebox p{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #expertise #inside #allBox #ebox #ebox-img{
+        display: flex;
+        justify-content: center;
+    }
+
+    #expertise #inside #allBox #ebox #ebox-img img{
+        width: 300px;
+        height: 300px;
+    }
+    
+    #footer{
+        overflow-x: hidden;
+        width: 100%;
+        height: auto;
+        overflow-y: hidden;
+        background-color: #3D3D3D;
+    }
+        #footer #footer-cont{
+            display: flex;
+            height: auto;
+            width: 100%;
+            justify-content: center;
+            background-color: #3D3D3D;
+            flex-direction: column;
+        }
+            #footer #footer-cont #left{
+                display: flex;
+                margin: 0px;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+            }
+                #footer #footer-cont #left #left-img{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 50px;
+                }
+                
+            #footer #footer-cont #right{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                align-content: center;
+
+            }
+                #footer #footer-cont #right #allLinks{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+                    align-items: center;
+                }
+    
+                    #footer #footer-cont #right h3{
+                        font-size: 30px;
+                        font-weight: bold;
+                        color: white;
+                    }
+    
+                    #footer #footer-cont #right #allLinks #list{
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        height: auto;
+                        font-weight: bold;
+                        font-size: 18px;
+                        color: white;
+                        margin-bottom: 20px;
+                        
+                    }
+                        #footer #footer-cont #right #allLinks #list img{
+                            width: 60px;
+                            height: 60px;
+                            margin-right: 20px;
+                        }
+    
+}        
+
+/* Pakek AOS Bambanks */

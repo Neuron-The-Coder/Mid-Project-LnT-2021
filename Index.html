@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="HeadTitle">Hello</title>
+    <link rel="stylesheet" href="IndexS.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <div id="backbutton"></div>
+
+    <div id="navbar">
+        <div id="navcon">
+            <img src="Assets/LogoNav.png" alt="" srcset="">
+            <ul>
+                <li id="showDrop">Expertise</li>
+                <li id="showDrop">Projects</li>
+                <li id="showDrop">Contact Me</li>
+
+                <li id="hidDrop">
+                    <div id="ham">&#9776</div>
+                    <div id="hidDropCon">
+                        <p>Expertise</p>
+                        <p>Projects</p>
+                        <p>Contact Me</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="frontpage">
+        <div id="frontpage-inside">
+            <div id="welcome"></div>
+        <div id="motto">Ad Astra Per Aspera</div>
+        <div id="buttonA">
+            <button type="button" id="AboutMeButton" onclick="AboutMeClicked()" value="GoTo" >About Me</button>
+        </div>
+        </div>
+        
+    </div>
+
+    <div id="about-me">
+        <div id="about-me-inside">
+            <h1>About me</h1>
+
+            <div id="photo-id">
+                <div id="photo-id-img">
+                    <div id="img-front"><img src="Assets/PP-Ethen.svg" alt="" srcset=""></div>
+                    <!-- <div id="img-back"><img src="Assets/PP-Dao.svg" alt="" srcset=""></div> -->
+                </div>
+
+                <div id="photo-id-des">
+                    <div id="photo-id-des-inside">
+                        <p>Young and passionate guy who loves to pour his imagination to any visual and functional thing</p>
+                        <p>With solid grasp on logic and imagination, he believes that both will benefit anyone</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="edu">
+                <table id="edu-table">
+                    <tr>
+                        <td>2017 - 2020</td>
+                        
+                        <td id="td2">SMA Dian Harapan Bangka (Science)</td>
+                    </tr>
+                    <tr>
+                        <td>2020 - Present</td>
+                        
+                        <td id="td2">Bina Nusantara University (Cyber Security)</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="expertise">
+        <div id="inside">
+            <h1>Expertise</h1>
+            <h3>Rated from 1 to 5</h3>
+
+            <div id="allBox">
+                <div id="ebox" data-aos="flip-left">
+                    <div id="ebox-img"><img src="Assets/Software Prog.svg" width="3vh" height="3vh"></div>
+                    <div id="ebox-text">
+                        <p>Python - 3</p>
+                        <p>C/C++ - 3</p>
+                        <p>Java - 2</p>
+                    </div>
+                </div>
+    
+                <div id="ebox" data-aos="flip-left">
+                    <div id="ebox-img"><img src="Assets/Web.svg"></div>
+                    <div id="ebox-text">
+                        <p>HTML CSS - 3</p>
+                        <p>Javascript - 2.5</p>
+                        <p>PHP - 2</p>
+                    </div>
+                </div>
+    
+                <div id="ebox" data-aos="flip-left">
+                    <div id="ebox-img"><img src="Assets/Software.svg"></div>
+                    <div id="ebox-text">
+                        <p>Photoshop - 3.5</p>
+                        <p>Office - 4</p>
+                        <p>IbisPaintX - 4</p>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+    <div id="projects">
+        <h1>Current Projects</h1>
+        <div id="projects-cont">
+            <div id="projects-cont-in1">
+                <img id="Pic1Project" src="Assets/P1.svg">
+                <p id="proj1">First real project on website. <br>Designed to be equipped
+                    with login and .ics file for Office syncronization</p>
+            </div>
+            <div id="projects-cont-in2">
+                <img id="Pic2Project" src="Assets/P2.svg">
+                <p id="proj2">Two to three artworks yet to be finished soon <br>This is drawn in IbisPaintX</p>
+                <p id="proj2"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-me">
+        <div id="contact-me-cont">
+            <h1>Contact Me</h1>
+            <form action="" method="post">
+                <div id="fill-name">
+                    <input type="text" name="Name" id="blanks" placeholder="Name" required>
+                </div>
+                <div id="fill-email">
+                    <input type="email" name="Email" id="blanks" placeholder="Email" required>
+                </div>
+                <div id="fill-linkedin">
+                    <input type="text" name="LinkedIn" id="blanks" placeholder="LinkedIn Account" required>
+                </div>
+                <div id="fill-comment">
+                    <textarea name="" id="Comment" cols="30" rows="10" placeholder="At least 10 chars length" minlength="10"></textarea>
+                </div>
+                <div id="submits">
+                    <input type="submit" value="Send" id="SubButton">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="footer-cont">
+            <div id="left">
+                <div id="left-img">
+                    <img src="Assets/LogoNav.svg" alt="" srcset="">
+                </div>
+            </div>
+            <div id="right">
+                <div id="right-cont">
+                    <h3>Links</h3>
+
+                    <div id="allLinks">
+                        <div id="list">
+                            <img src="Assets/EmailIcon.svg" alt="" srcset="">
+                            <p>doctorneuron1718@gmail.com</p>
+                        </div>
+                        <div id="list">
+                            <img src="Assets/InstagramIcon.svg" alt="" srcset="">
+                            <p>@doctorneuron</p>
+                        </div>
+                        <div id="list">
+                            <img src="Assets/TwitterIcon.svg" alt="" srcset="">
+                            <p>@neuron_doctor</p>
+                        </div>
+                        <div id="list">
+                            <img src="Assets/GithubIcon.svg" alt="" srcset="">
+                            <p>github.com/Neuron-The-Coder</p>
+                        </div>
+                        <div id="list">
+                            <img src="Assets/DeviantartIcon.svg" alt="" srcset="">
+                            <p>deviantart.com/doctorneuron</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="WebTitleJS.js"></script>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="Part1JS.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+</body>
+</html>
