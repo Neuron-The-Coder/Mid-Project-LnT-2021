@@ -120,13 +120,13 @@ $(document).ready(function(){
 
     $("#about-me #about-me-inside #photo-id img").mouseenter(function (){
         $("#about-me #about-me-inside #photo-id img").fadeOut(500, function(){
-             $("#about-me #about-me-inside #photo-id img").attr("src", "Assets/PP-Dao.svg").fadeIn(500)
+             $("#about-me #about-me-inside #photo-id img").attr("src", "Assets/PP-Ethen.svg").fadeIn(500)
         })
     })
 
     $("#about-me #about-me-inside #photo-id img").mouseleave(function (){
         $("#about-me #about-me-inside #photo-id img").fadeOut(500, function(){
-             $("#about-me #about-me-inside #photo-id img").attr("src", "Assets/PP-Ethen.svg").fadeIn(500)
+             $("#about-me #about-me-inside #photo-id img").attr("src", "Assets/PP-Real.svg").fadeIn(500)
         })
     })
 
